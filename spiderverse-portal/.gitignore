@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+configs/user.yaml
+snapshots/
+# Large generated model files: recreate with tools/setup_models.py
+models/animegan2/*.pt
+models/animegan2/*.onnx
+models/coreml/
+models/*.task
+models/*.tflite
+models/cache/

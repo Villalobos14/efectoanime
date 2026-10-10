@@ -1,0 +1,85 @@
+{
+  "camera": {
+    "index": null,
+    "width": 640,
+    "height": 480,
+    "fps": 30,
+    "mirror": true
+  },
+  "tracker": {
+    "num_hands": 2,
+    "min_hand_detection_confidence": 0.5,
+    "min_hand_presence_confidence": 0.5,
+    "min_hand_tracking_confidence": 0.5,
+    "min_face_detection_confidence": 0.5,
+    "min_face_presence_confidence": 0.5,
+    "min_face_tracking_confidence": 0.5
+  },
+  "gesture": {
+    "activate_frames": 3,
+    "deactivate_frames": 8,
+    "min_l_angle_deg": 40,
+    "max_l_angle_deg": 140,
+    "min_tip_separation_ratio": 0.55,
+    "min_palm_px": 28,
+    "min_hand_separation_px": 50,
+    "min_quad_area_ratio": 0.012,
+    "max_quad_area_ratio": 0.8,
+    "min_corner_angle_deg": 18,
+    "max_side_ratio": 4.5
+  },
+  "smoothing": {
+    "min_cutoff": 1.15,
+    "beta": 0.045,
+    "d_cutoff": 1.0,
+    "max_jump_px": 240,
+    "jump_accept_frames": 3
+  },
+  "face_smoothing": {
+    "min_cutoff": 1.4,
+    "beta": 0.03,
+    "d_cutoff": 1.0,
+    "max_jump_px": 140,
+    "jump_accept_frames": 2
+  },
+  "fade": {
+    "attack": 16.0,
+    "release": 8.0
+  },
+  "face": {
+    "hold_sec": 0.28,
+    "min_eye_px": 12,
+    "max_eye_px": 420
+  },
+  "occlusion": {
+    "thickness_scale": 0.42,
+    "min_thickness": 8,
+    "max_thickness": 46,
+    "dilate_px": 5
+  },
+  "portal": {
+    "feather_px": 6.0,
+    "edge_width": 2,
+    "grade_saturation": 1.28,
+    "grade_value": 1.04,
+    "grade_mix": 0.1
+  },
+  "calibration": {
+    "offset_x": 0,
+    "offset_y": 0,
+    "scale": 1.0,
+    "rotation_deg": 0
+  },
+  "anchors": {
+    "left_eye": [0.37109375, 0.484375],
+    "right_eye": [0.62890625, 0.484375],
+    "nose": [0.5, 0.6015625],
+    "chin": [0.5, 0.83984375]
+  },
+  "models": {
+    "hand": "models/hand_landmarker.task",
+    "face": "models/face_landmarker.task"
+  },
+  "anime_asset": "assets/anime_face.png",
+  "calibration_path": "configs/calibration.json"
+}

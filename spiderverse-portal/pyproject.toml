@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spiderverse-portal"
+version = "0.1.0"
+description = "Real-time neural comic stylization revealed through a hand-framed AR portal."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.26",
+    "opencv-python>=4.10",
+    "mediapipe>=0.10.14",
+    "onnxruntime>=1.17",
+    "coremltools>=8.0; sys_platform == 'darwin'",
+    "pyobjc-framework-AVFoundation>=10; sys_platform == 'darwin'",
+    "pyobjc-framework-Quartz>=10; sys_platform == 'darwin'",
+    "pyobjc-framework-libdispatch>=10; sys_platform == 'darwin'",
+    "pyyaml>=6",
+    "moderngl>=5.10",  # offscreen OpenGL 4.1 for the 3D character renderer
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+# Only needed to (re)export model files; the app itself never imports torch.
+tools = ["torch>=2.2", "onnx>=1.15"]
+
+[project.scripts]
+spiderverse-portal = "spiderverse_portal.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+markers = [
+    "camera: needs the physical webcam (skipped unless SPIDERVERSE_CAMERA_TESTS=1)",
+    "neural: needs exported model files",
+]

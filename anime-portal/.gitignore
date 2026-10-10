@@ -1,0 +1,11 @@
+.venv/
+.mplconfig/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+*.pyc
+captures/
+configs/calibration.json
+models/*.task
+models/*.part
+.DS_Store

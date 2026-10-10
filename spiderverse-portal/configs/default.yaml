@@ -1,0 +1,169 @@
+# Spider-Verse Portal configuration.
+# Edits to this file are hot-reloaded while the app runs (comic, portal,
+# occlusion and temporal settings). Press S in the app to save the current
+# runtime state to configs/user.yaml, which is layered on top of this file.
+camera:
+  device: auto
+  width: 640
+  height: 480
+  fps: 30
+  mirror: true
+  backend: auto
+tracking:
+  max_hands: 2
+  detect_face: true
+  face_every_n_frames: 2
+  idle_hand_every_n_frames: 2
+  smoothing_enabled: true
+  min_hand_detection_confidence: 0.5
+  min_hand_presence_confidence: 0.5
+  min_tracking_confidence: 0.5
+  one_euro_min_cutoff: 1.0
+  one_euro_beta: 6.0
+  one_euro_d_cutoff: 1.0
+  hand_match_max_distance: 0.25
+  hand_forget_ms: 400.0
+portal:
+  gesture_enabled: true
+  minimum_area_ratio: 0.025
+  maximum_area_ratio: 0.95
+  min_interior_angle_deg: 25.0
+  min_edge_ratio: 0.12
+  min_hand_separation: 0.08
+  max_corner_jump: 0.22
+  enter_score: 0.6
+  stay_score: 0.4
+  activate_ms: 90.0
+  lost_grace_ms: 280.0
+  feather_radius: 1.5
+  fade_in_ms: 120.0
+  fade_out_ms: 180.0
+  border_px: 3
+  border_offset_px: 2
+stylization:
+  neural_enabled: true
+  comic_enabled: true
+  strength: 1.0
+  sync_mode: latest
+  max_stylized_age_ms: 400.0
+  max_render_width: 640
+  auto_exposure: true
+  exposure_max_gain: 4.0
+  neural:
+    model: paprika
+    engine: auto
+    inference_width: 320
+    input_denoise: 0.6
+    temporal_blend: 0.45
+    motion_threshold: 10.0
+comic:
+  ink_strength: 0.85
+  ink_scale: 1.0
+  ink_threshold: 0.018
+  ink_silhouette: 0.6
+  ink_ghost: 0.35
+  color_levels: 4
+  cel_shading: true
+  cel_strength: 0.8
+  cel_softness: 0.035
+  halftone_enabled: true
+  halftone_strength: 0.45
+  halftone_cell: 6.0
+  halftone_angle_deg: 45.0
+  benday_strength: 0.12
+  crosshatch_strength: 0.25
+  print_offset: 1
+  saturation: 1.45
+  contrast: 1.25
+  hue_snap: 0.45
+  shadow_tint:
+  - 0.45
+  - 0.3
+  - 1.0
+  highlight_tint:
+  - 1.0
+  - 0.45
+  - 0.8
+  tint_strength: 0.75
+  paper_grain: 0.01
+  face_protect: true
+  silhouette_px: 3.0
+  background_offset: 3
+  background_strength: 0.7
+costume:
+  mode: suit
+  suit_strength: 1.0
+  red_balance: 0.6
+  emblem_scale: 0.62
+  web_density: 10
+  web_rings: 3
+  line_px: 1.3
+  highlight_strength: 0.45
+  suit_color:
+  - 0.07
+  - 0.05
+  - 0.08
+  highlight_color:
+  - 0.22
+  - 0.28
+  - 0.48
+  accent_color:
+  - 0.9
+  - 0.07
+  - 0.12
+  mask_eye_scale: 1.5
+  hair_cap: 1.0
+  face_photo_mix: 0.6
+character:
+  mode: miles_full_suit
+  asset: assets/characters/miles_prototype.glb
+  msaa: 4
+  render_scale: 1.0
+  head_scale: 1.0
+  head_offset_cm:
+  - 0.0
+  - 0.0
+  - 0.0
+  head_rotation_offset_deg:
+  - 0.0
+  - 0.0
+  - 0.0
+  auto_refine: true
+  body_scale: 1.0
+  shoulder_depth_cm: 3.5
+  head_min_cutoff: 1.6
+  head_beta: 0.35
+  rotation_beta: 4.0
+  body_min_cutoff: 1.0
+  body_beta: 0.3
+  expression_gain: 1.0
+  outline_px: 2.2
+  halftone_cell_px: 6.0
+  halftone_strength: 0.75
+  rim_strength: 0.65
+  key_light:
+  - -0.45
+  - 0.55
+  - 0.7
+  erase_real_head: true
+  erase_margin: 0.05
+  hand_cutout: true
+  debug_opacity: 0.6
+occlusion:
+  enabled: true
+  finger_width: 0.24
+  edge_band: 0.7
+  skin_refine: true
+  softness_px: 2.0
+performance:
+  max_pending_frames: 1
+  adaptive_quality: true
+  show_metrics: false
+  tracking_wait_ms: 30.0
+debug:
+  show_hands: false
+  show_face: false
+  full_stylized: false
+  comparison: false
+  expression_check: true
+  expression_check_interval_ms: 500.0
